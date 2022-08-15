@@ -25,17 +25,17 @@
   "techs": [
     {
       "id": 1,
-      "firtName": "John",
+      "firstName": "John",
       "lastName": "Doe"
     },
     {
       "id": 2,
-      "firtName": "Sam",
+      "firstName": "Sam",
       "lastName": "Smith"
     },
     {
       "id": 3,
-      "firtName": "Sara",
+      "firstName": "Sara",
       "lastName": "Wilson"
     }
   ]
