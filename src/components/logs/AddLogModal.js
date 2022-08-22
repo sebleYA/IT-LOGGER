@@ -54,7 +54,7 @@ const AddLogModal = ({ addLog }) => {
             <select
               name='tech'
               value={tech}
-              className='browser-dafault'
+              className='browser-default'
               onChange={(e) => setTech(e.target.value)}
             >
               <option value='' disabled>
