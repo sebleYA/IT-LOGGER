@@ -16,10 +16,10 @@
     },
     {
       "id": 3,
-      "message": "workstation 002 hardware failed and down",
-      "attention": true,
-      "tech": "Sara Wilson",
-      "date": "2022-08-22T19:35:51.359Z"
+      "message": "workstation 002 hardware up and running",
+      "attention": false,
+      "tech": "Jhon Doe",
+      "date": "2022-08-22T20:00:42.081Z"
     },
     {
       "message": "Hard drive failed in workstation 016",
