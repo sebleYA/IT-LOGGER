@@ -4,28 +4,29 @@
       "message": "Changed network card in server 006",
       "attention": false,
       "tech": "Jhon Doe",
-      "data": "2022-08-22T04:02:39.319Z",
+      "data": "2022-08-22T19:34:46.742Z",
       "id": 1
     },
     {
       "message": "Hard drive failed in workstation 005",
       "attention": true,
       "tech": "Sam Smith",
-      "data": "2022-08-22T04:03:24.573Z",
+      "data": "2022-08-22T19:35:00.856Z",
       "id": 2
     },
     {
-      "message": " 002 hardware up and running",
-      "attention": false,
+      "id": 3,
+      "message": "workstation 002 hardware failed and down",
+      "attention": true,
       "tech": "Sara Wilson",
-      "data": "2022-08-22T04:05:20.225Z",
-      "id": 3
+      "date": "2022-08-22T19:35:51.359Z"
     },
     {
+      "message": "Hard drive failed in workstation 016",
+      "attention": true,
+      "tech": "Sam Smith",
+      "data": "2022-08-22T19:35:20.134Z",
       "id": 4
-    },
-    {
-      "id": 5
     }
   ],
   "techs": [

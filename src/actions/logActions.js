@@ -7,6 +7,7 @@ import {
   UPDATE_LOG,
   SET_CURRENT,
   CLEAR_CURRENT,
+  SEARCH_LOGS
 } from './types';
 
 // Get logs from Server
@@ -82,18 +83,45 @@ export const deleteLog = (id) => async (dispatch) => {
 export const updateLog = (log) => async (dispatch) => {
   try {
     setLoading();
-
+    console.log('action', log);
     const res = await fetch(`/logs/${log.id}`, {
       method: 'PUT',
       body: JSON.stringify(log),
       headers: {
-        'Content-Type': 'applicaton/json',
+        'Content-Type': 'application/json',
       },
     });
     const data = await res.json();
 
+    console.log('data', data);
+
+
+    if(data){
+      dispatch({
+        type: UPDATE_LOG,
+        payload: data,
+      });
+    }else{
+      throw new Error()
+    }
+  } catch (err) {
     dispatch({
-      type: UPDATE_LOG,
+      type: LOGS_ERROR,
+      payload: err.response.data,
+    });
+  }
+};
+
+//Search logs
+export const searchLogs = (text) => async (dispatch) => {
+  try {
+    setLoading();
+
+    const res = await fetch(`logs?q=${text}`);
+    const data = await res.json();
+
+    dispatch({
+      type: SEARCH_LOGS,
       payload: data,
     });
   } catch (err) {
@@ -103,6 +131,7 @@ export const updateLog = (log) => async (dispatch) => {
     });
   }
 };
+
 
 // Set Current Log
 export const setCurrent = (log) => {

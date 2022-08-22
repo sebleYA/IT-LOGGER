@@ -30,11 +30,11 @@ const EditLogModal = ({ updateLog, current }) => {
         tech,
         date: new Date(),
       };
-
+      console.log('uploadedLog', uploadedLog);
       updateLog(uploadedLog);
+
       M.toast({ html: `Log updated by ${tech}` });
 
-      console.log(uploadedLog)
 
       // Clear Fields
       setMessage('');
