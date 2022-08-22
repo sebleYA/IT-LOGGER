@@ -48,7 +48,6 @@ const AddTechModal = () => {
             </label>
           </div>
         </div>
-
       </div>
       <div className='modal-footer'>
         <a
