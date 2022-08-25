@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { updateLog } from '../../actions/logActions';
+import TechSelectOptions from '../techs/TechSelectOptions';
+
 import M from 'materialize-css/dist/js/materialize.min.js';
 
 const EditLogModal = ({ updateLog, current }) => {
   const [message, setMessage] = useState('');
   const [attention, setAttention] = useState(false);
   const [tech, setTech] = useState('');
-
-  const techList = ['Jhon Doe', 'Sam Smith', 'Sara Wilson'];
 
   useEffect(() => {
     if (current && current !== null) {
@@ -35,14 +35,12 @@ const EditLogModal = ({ updateLog, current }) => {
 
       M.toast({ html: `Log updated by ${tech}` });
 
-
       // Clear Fields
       setMessage('');
       setTech('');
       setAttention(false);
     }
   };
-
 
   return (
     <div id='edit-log-modal' className='modal' style={modalStyle}>
@@ -56,26 +54,22 @@ const EditLogModal = ({ updateLog, current }) => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-           
           </div>
         </div>
 
         <div className='row'>
           <div className='input-field'>
-            {
-              <select
-                name='tech'
-                value={tech}
-                className='browser-default'
-                onChange={(e) => setTech(e.target.value)}
-              >
-                {techList.map((name, i) => (
-                  <option key={i} value={name}>
-                    {name}
-                  </option>
-                ))}
-              </select>
-            }
+            <select
+              name='tech'
+              value={tech}
+              className='browser-default'
+              onChange={(e) => setTech(e.target.value)}
+            >
+              <option value='' disabled>
+                Select Technician
+              </option>
+              <TechSelectOptions />
+            </select>
           </div>
         </div>
 
@@ -124,4 +118,3 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, { updateLog })(EditLogModal);
-
