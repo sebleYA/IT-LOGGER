@@ -7,7 +7,7 @@ import {
   UPDATE_LOG,
   SET_CURRENT,
   CLEAR_CURRENT,
-  SEARCH_LOGS
+  SEARCH_LOGS,
 } from './types';
 
 // Get logs from Server
@@ -25,7 +25,7 @@ export const getLogs = () => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data,
+      payload: err.response.statusText,
     });
   }
 };
@@ -52,7 +52,7 @@ export const addLog = (log) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data,
+      payload: err.response.statusText,
     });
   }
 };
@@ -71,10 +71,9 @@ export const deleteLog = (id) => async (dispatch) => {
       payload: id,
     });
   } catch (err) {
-
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data,
+      payload: err.response.statusText,
     });
   }
 };
@@ -95,19 +94,18 @@ export const updateLog = (log) => async (dispatch) => {
 
     console.log('data', data);
 
-
-    if(data){
+    if (data) {
       dispatch({
         type: UPDATE_LOG,
         payload: data,
       });
-    }else{
-      throw new Error()
+    } else {
+      throw new Error();
     }
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data,
+      payload: err.response.statusText,
     });
   }
 };
@@ -127,11 +125,10 @@ export const searchLogs = (text) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data,
+      payload: err.response.statusText,
     });
   }
 };
-
 
 // Set Current Log
 export const setCurrent = (log) => {
