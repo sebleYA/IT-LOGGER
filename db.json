@@ -4,14 +4,14 @@
       "message": "Changed network card in server 006",
       "attention": false,
       "tech": "Jhon Doe",
-      "data": "2022-08-22T19:34:46.742Z",
+      "date": "2022-08-22T19:34:46.742Z",
       "id": 1
     },
     {
       "message": "Hard drive failed in workstation 005",
       "attention": true,
       "tech": "Sam Smith",
-      "data": "2022-08-22T19:35:00.856Z",
+      "date": "2022-08-22T19:35:00.856Z",
       "id": 2
     },
     {
@@ -25,8 +25,15 @@
       "message": "Hard drive failed in workstation 016",
       "attention": true,
       "tech": "Sam Smith",
-      "data": "2022-08-22T19:35:20.134Z",
+      "date": "2022-08-22T19:35:20.134Z",
       "id": 4
+    },
+    {
+      "message": "New workstation 012 installed",
+      "attention": false,
+      "tech": "new user",
+      "date": "2022-08-25T02:59:11.739Z",
+      "id": 5
     }
   ],
   "techs": [
@@ -49,6 +56,11 @@
       "firstName": "Jill",
       "lastName": "Harrison",
       "id": 5
+    },
+    {
+      "firstName": "new",
+      "lastName": "user",
+      "id": 6
     }
   ]
 }
